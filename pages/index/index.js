@@ -51,7 +51,7 @@ Page({
   },
   onLoad: function () {
     var that =this
-    console.log('获取mohennet.xyz数据')
+    console.log('获取mohennet.xyz数据git')
     var jwt = wx.getStorageSync('jwt');
     that.geturl();
     if(!jwt){
