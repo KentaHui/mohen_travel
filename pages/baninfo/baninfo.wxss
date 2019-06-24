@@ -1,0 +1,97 @@
+page {
+  background-color: #eeeff1;
+  font-size: 28rpx;
+  padding-bottom: 150rpx;
+}
+
+.k-bai {
+  background-color: #fff;
+  padding: 30rpx;
+}
+
+.k-input {
+  position: relative;
+  height: 80rpx;
+  border-bottom: 1rpx solid #eee;
+  line-height: 80rpx;
+}
+
+.k-input .k-label {
+  width: 150rpx;
+  position: absolute;
+  left: 30rpx;
+  top: 5rpx;
+}
+
+.k-input input {
+  width: 600rpx;
+  position: absolute;
+  left: 150rpx;
+  top: 23rpx;
+}
+
+.k-input picker {
+  width: 600rpx;
+  position: absolute;
+  left: 145rpx;
+  top: 5rpx;
+}
+
+.shuoming3 {
+  width: 660rpx;
+  padding: 15rpx;
+  background-color: #b3b3b3;
+  color: #fff;
+  border-radius: 10rpx;
+  margin: 0 auto;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.k-area {
+  overflow: hidden;
+  border-bottom: 1rpx solid #eee;
+}
+
+.k-area .k-label {
+  width: 150rpx;
+  float: left;
+  margin-top: 20rpx;
+  margin-left: 30rpx;
+}
+
+.k-area textarea {
+  margin-top: 20rpx;
+  width: 470rpx;
+  float: right;
+  height: 100rpx;
+  background-color: #f7f7f7;
+  padding: 20rpx;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+}
+
+.addleft {
+  padding: 0 30rpx;
+}
+
+.video {
+  display: flex;
+  flex-direction: column;
+}
+
+.save-btn {
+  width: 690rpx;
+  height: 90rpx;
+  text-align: center;
+  line-height: 90rpx;
+  background-color: #5677fc;
+  color: #fff;
+  font-size: 34rpx;
+  border-radius: 90rpx;
+  position: fixed;
+  left: 50%;
+  margin-left: -345rpx;
+  bottom: 30rpx;
+  z-index: 100;
+}

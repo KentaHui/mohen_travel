@@ -1,0 +1,18 @@
+<view class="tab">
+  <view class='item {{index==tabindex?"cur":""}}' wx:for="{{tab}}" wx:key="" data-index='{{index}}' bindtap='ontab'>
+    {{item.titt}}
+  </view>
+</view>
+<view class='travel-list'>
+  <view class='item' wx:for="{{list}}" wx:key="" bindtap='toyuandet'>
+    <view class='hd'>
+      #{{item.tips}}# · {{item.time}}
+    </view>
+    <view class='bd'>
+      <view class='titt'>{{item.titt}}</view>
+      <view class='sub-titt'>{{item.subtitt}}</view>
+    </view>
+    <image src='/images/yuan_03.png' class='suo'></image>
+  </view>
+</view>
+<view class='edit' bindtap='toedit'>创建文章</view>

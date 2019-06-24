@@ -1,0 +1,84 @@
+<!--pages/me/me.wxml-->
+<view class="top" style='background-image: url(http://blog-kenta.oss-cn-hangzhou.aliyuncs.com/poster/back.jpg)'>
+  <image src='/images/sl_03.png' class='tx'></image>
+  <view class='name'>
+    {{name}}
+    <image src='/images/sexm.png' class='sex'></image>
+  </view>
+  <view class='sub'>简介：{{sub}}</view>
+  <view class='follow'>
+    <view class='item'>
+      关注：40
+    </view>
+    <view class='item'>
+      粉丝：26023
+    </view>
+  </view>
+  <view class='tips'>
+    <view class='item' wx:for="{{tips}}" wx:key="">{{item}}</view>
+  </view>
+  <view class='follo-btn' bindtap='onrole'>
+    <image src='/images/switch.png'></image>
+    {{role=="游客"?"游客":""}}{{role=="活动组织"?"活动组织":""}}{{role=="导游"?"导游":""}}
+  </view>
+</view>
+<view class='messages' wx:if="{{role=='游客'}}">
+  <view class='link' bindtap='tomessages' bindtap='topublish'>
+    <image src='/images/channel1.png' class='icon'></image>
+    我的发布
+    <image src='/images/pic_28.png' class='arrow'></image>
+  </view>
+  <view class='link' bindtap='tolike'>
+    <image src='/images/channel2.png' class='icon'></image>
+    我的收藏
+    <image src='/images/pic_28.png' class='arrow'></image>
+  </view>
+  <view class='link' bindtap='tofollow'>
+    <image src='/images/channel2.png' class='icon'></image>
+    我的关注
+    <image src='/images/pic_28.png' class='arrow'></image>
+  </view>
+  <view class='link' bindtap='tomessage'>
+    <image src='/images/channel3.png' class='icon'></image>
+    消息通知
+    <image src='/images/pic_28.png' class='arrow'></image>
+    <view class='dot'>3</view>
+  </view>
+  <view class='link' bindtap='toshoprz'>
+    <image src='/images/channel_14.png' class='icon'></image>
+    商家认证
+    <image src='/images/pic_28.png' class='arrow'></image>
+  </view>
+  <view class='link' bindtap='topersonrz'>
+    <image src='/images/channel_14.png' class='icon'></image>
+    个人认证
+    <image src='/images/pic_28.png' class='arrow'></image>
+  </view>
+  <view class='link'>
+    <image src='/images/channel_14.png' class='icon'></image>
+    菜单
+    <image src='/images/pic_28.png' class='arrow'></image>
+  </view>
+</view>
+<view class='messages' wx:if="{{role=='活动组织'}}">2</view>
+<view class='messages' wx:if="{{role=='导游'}}">
+  <view class='link' bindtap='tomessages' bindtap='tobaninfo'>
+    <image src='/images/channel1.png' class='icon'></image>
+    伴游个人信息
+    <image src='/images/pic_28.png' class='arrow'></image>
+  </view>
+</view>
+<!-- 点击角色选择 -->
+<view class='ceng' bindtap='onceng' wx:if="{{showceng}}"></view>
+<view class='role' wx:if="{{showrole}}">
+  <view wx:for="{{rolelist}}" wx:key="" data-index="{{index}}" data-name="{{item.name}}" class='item' bindtap='choserole'>
+    <view class='imgbox'>
+      <image src='/images/selected.png' class='selected' wx:if="{{index==roleindex}}"></image>
+      <image src='{{item.tu}}' class='tu'></image>
+    </view>
+    <text class='{{index==roleindex?"cur":""}}'>我是{{item.name}}</text>
+  </view>
+  <view class='btnbox' bindtap='done'>
+    <view class='btn' bindtap='ondone'>选好了</view>
+  </view>
+</view>

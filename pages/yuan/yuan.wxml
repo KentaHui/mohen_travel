@@ -1,0 +1,13 @@
+<view class='travel-list'>
+  <view class='item' wx:for="{{list}}" wx:key="" bindtap='toyuandet'>
+    <view class='hd'>
+      <image src='{{item.avatar}}' class='avatar'></image> {{item.userid}} 发布了#{{item.tips}}# · {{item.time}}
+    </view>
+    <view class='bd'>
+      <view class='titt'>{{item.titt}}</view>
+      <view class='sub-titt'>{{item.subtitt}}</view>
+    </view>
+    <image src='/images/yuan_03.png' class='suo'></image>
+  </view>
+</view>
+<view class='fly-btn' bindtap='topost'>开团</view>

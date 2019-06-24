@@ -1,0 +1,47 @@
+<view class="top" style='background-image:url(http://wechatpx.oss-cn-beijing.aliyuncs.com/yuandet_02.png)'>
+  <view class='hui'></view>
+  <view class='anchor'>
+    <image class='avatar' src='{{anchor}}'></image>
+    <view class='nickname'>{{nickname}}</view>
+    <view class='online'>{{sex}}</view>
+    <view class='local'>
+      <image src='/images/map-bai.png'></image>
+      {{local}}
+    </view>
+  </view>
+  <view class='hd-titt'>{{hdtitt}}</view>
+  <view class='apply {{apply?"applyed":""}}' bindtap='onapply'>{{apply?"已预约":"联系预约"}}</view>
+</view>
+<view class='info info1'>
+  <view class='titt'>
+    <image src='/images/ydicon_03.png'></image>
+    简介
+  </view>
+  <view class='zw'>{{info1}}</view>
+</view>
+<view class='info info2'>
+  <view class='titt'>
+    <image src='/images/ydicon_06.png'></image>
+    展示
+  </view>
+  <view class='zw'>
+    {{info2}}
+    <image src='/images/yuandet_02.png'></image>
+  </view>
+</view>
+<view class='info info3'>
+  <view class='titt'>
+    <image src='/images/pl.png'></image>
+    评论
+  </view>
+  <view class='tips'>
+    <view wx:for='{{tips}}' wx:key=''>{{item}}</view>
+  </view>
+  <view class='pl-item' wx:for='{{pl}}' wx:key=''>
+    <view class='tx'>
+      <image src='{{item.anchor}}'></image>
+      {{item.name}}
+    </view>
+    <view class='txt'>{{item.txt}}</view>
+  </view>
+</view>

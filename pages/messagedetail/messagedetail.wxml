@@ -1,0 +1,5 @@
+<view class="box">
+  <view class='titt'>{{titt}}</view>
+  <view class='time'>{{time}}</view>
+  <view class='content'>{{content}}</view>
+</view>

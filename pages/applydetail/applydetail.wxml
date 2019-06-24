@@ -1,0 +1,29 @@
+<view class='travel-list'>
+  <view class='item'>
+    <view class='hd'>
+      <image src='{{list.avatar}}' class='avatar'></image> {{list.userid}} 申请加入 #{{list.tips}}#
+    </view>
+    <view class='bd'>
+      <view class='titt'>{{list.titt}}</view>
+      <view class='sub-titt'>{{list.subtitt}}</view>
+    </view>
+    <image src='/images/yuan_03.png' class='suo'></image>
+  </view>
+</view>
+<view class='remark'>
+  <view class='titt'>申请留言</view>
+  <view class='info'>
+    性格开朗、待人热情、工作细心、办事高效、能 吃苦耐劳、有较强的组织能力
+  </view>
+</view>
+<!-- 拒绝理由 -->
+<view class='ceng' wx:if="{{showceng}}" bindtap='onceng'></view>
+<view class='refused' wx:if="{{showrefused}}">
+  <view class='titt'>拒绝理由</view>
+  <textarea placeholder='请输入您拒绝申请者的理由' value="{{textarea}}" />
+  <view class='reasons {{index==reasonindex?"cur":""}}' wx:for="{{reasons}}" data-index='{{index}}' wx:key="" data-text='{{item}}' bindtap='onreasons'>{{item}}</view>
+  <view class='btn' bindtap='onsubmit'>提交</view>
+</view>
+
+<view class='fly-btn1'>通过</view>
+<view class='fly-btn2' bindtap='onrefused'>拒绝</view>
