@@ -1,0 +1,7 @@
+<view class="box">
+  <view class='titt'>{{titt}}</view>
+  <view class='author'>
+    <image src='{{avatar}}' class='avatar'></image> {{userid}} 发布了#{{tips}}# · {{time}}
+  </view>
+  <view class='content'>{{content}}</view>
+</view>

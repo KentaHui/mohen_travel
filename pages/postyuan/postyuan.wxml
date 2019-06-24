@@ -1,0 +1,51 @@
+<view class='k-bai' style='margin-top:0'>
+  <view class='k-input'>
+    <view class='k-label'>标题</view>
+    <input data-name="linkman" type='text' name="linkman" placeholder="请输入活动标题"></input>
+  </view>
+  <view class='k-area'>
+    <text class='k-label' space="ensp">信息</text>
+    <textarea placeholder='请输入活动信息'></textarea>
+  </view>
+  <view class="page__bd">
+    <view class="weui-cells" style='margin-top:0rpx;'>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <view class="weui-uploader">
+            <view class="weui-uploader__hd">
+              <view class="weui-uploader__title" style='font-size:28rpx;'>图片上传</view>
+              <view class="weui-uploader__info" style='font-size:28rpx;'>{{images.length}}/9</view>
+            </view>
+            <view class="weui-uploader__bd">
+              <view class="weui-uploader__files" id="uploaderFiles">
+                <block wx:for="{{images}}" wx:key="*this">
+                  <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                    <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                  </view>
+                </block>
+              </view>
+              <view class="weui-uploader__input-box">
+                <view class="weui-uploader__input" bindtap="chooseImage"></view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='k-area'>
+    <text class='k-label' space="ensp">要求</text>
+    <textarea placeholder='请输入招募信息'></textarea>
+  </view>
+  <view class='k-input'>
+    <view class='k-label'>电话</view>
+    <input data-name="linkman" type='text' name="linkman" placeholder="请输入联系电话"></input>
+  </view>
+  <view class='k-input'>
+    <view class='k-label'>微信</view>
+    <input data-name="linkman" type='text' name="linkman" placeholder="请输入联系微信"></input>
+  </view>
+</view>
+
+<view class='k-btn launch' bindtap='upload'>发布</view>
+<view class='k-btn cancel'>取消</view>

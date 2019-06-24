@@ -1,0 +1,26 @@
+<view class="top" style='background-image:url(http://wechatpx.oss-cn-beijing.aliyuncs.com/yang-mini/yuandet_01.png)'>
+  <view class='hui'></view>
+  <view class='anchor'>
+    <image class='avatar' src='{{anchor}}'></image>
+    <view class='nickname'>{{nickname}}</view>
+    <view class='online'>{{online}}个活动</view>
+    <image src='/images/follow_03.png' class='follow' hidden="{{follow}}" bindtap='follow'></image>
+    <image src='/images/followed_03.png' class='follow' hidden="{{!follow}}" bindtap='follow'></image>
+  </view>
+  <view class='hd-titt'>{{hdtitt}}</view>
+  <view class='apply {{apply?"applyed":""}}' bindtap='onapply'>{{apply?"已申请":"申请入团"}}</view>
+</view>
+<view class='info info1'>
+  <view class='titt'>
+    <image src='/images/ydicon_03.png'></image>
+    活动信息
+  </view>
+  <view class='zw'>{{info1}}</view>
+</view>
+<view class='info info2'>
+  <view class='titt'>
+    <image src='/images/ydicon_06.png'></image>
+    招募要求
+  </view>
+  <view class='zw'>{{info2}}</view>
+</view>

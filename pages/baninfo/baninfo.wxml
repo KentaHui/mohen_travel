@@ -1,0 +1,35 @@
+<view class='k-bai'>
+  <view class='k-input'>
+    <view class='k-label'>姓名</view>
+    <input type='text' placeholder="请输入姓名" value='{{name}}'></input>
+  </view>
+  <view class='k-input'>
+    <view class='k-label'>性别</view>
+    <input type='text' placeholder="请输入性别" value='{{sex}}'></input>
+  </view>
+  <view class='k-input'>
+    <view class='k-label'>区域</view>
+    <input type='text' placeholder="请输入区域" value='{{area}}'></input>
+  </view>
+  <view class='k-input'>
+    <view class='k-label'>可预约时间</view>
+    <input type='text' placeholder="请输入可预约时间区间" style='left:190rpx;' value='{{time}}'></input>
+  </view>
+  <view class='k-area'>
+    <text class='k-label' space="ensp">个人简介</text>
+    <textarea placeholder='请输入个人简介' value='{{intro}}'></textarea>
+  </view>
+  <view class='k-area'>
+    <text class='k-label' space="ensp">个人展示</text>
+    <textarea placeholder='请输入个人展示' value='{{show}}'></textarea>
+  </view>
+  <view class='k-input'>
+    <view class='k-label'>微信</view>
+    <input type='text' placeholder="请输入微信" value='{{wechat}}'></input>
+  </view>
+  <view class='k-input'>
+    <view class='k-label'>电话</view>
+    <input type='text' placeholder="请输入电话" value='{{tel}}'></input>
+  </view>
+</view>
+<view class='save-btn'>保存</view>

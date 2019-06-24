@@ -1,0 +1,29 @@
+<view class='ceng' hidden='{{!showceng}}' catchtouchmove='true'></view>
+<!-- editTxt-titt -->
+<view class='edit-txt' hidden='{{!showedittitt}}' catchtouchmove='true'>
+  <textarea placeholder='请编辑文字' value='{{edittitt}}' bindconfirm="editedtitt"	 maxlength="300" />
+</view>
+<!-- editTxt-content -->
+<view class='edit-txt' hidden='{{!showeditcontent}}' catchtouchmove='true'>
+  <textarea placeholder='请编辑文字' value='{{editcontent}}' bindconfirm="editedcontent"	 maxlength="300" />
+</view>
+<!-- reditTxt-content 标题输入，首编辑输入，重新编辑输入是分别使用三个不同的编辑框实现-->
+<view class='edit-txt' hidden='{{!showreditcontent}}' catchtouchmove='true'>
+  <textarea placeholder='请编辑文字' value='{{reditcontent}}' bindconfirm="reditedcontent"	 maxlength="300" />
+</view>
+<view class='k-bai'>
+  <view class='txt titt' data-name='titt' bindtap='towrite'>
+    {{titt}}
+    <image src='/images/delet.png' class='delet-icon' data-name='titt' catchtap='ondelettitt' wx:if='{{titt!="请输入标题文字"}}'></image>
+  </view>
+</view>
+<view class='content k-bai' wx:for="{{content}}" wx:key="" data-leixing='{{item.leixing}}' data-index='{{index}}' bindtap='redit'>
+  <view class='txt' wx:if="{{item.leixing=='txt'}}">{{item.neirong}}</view>
+  <image src='{{item.url}}' class='image' mode="widthFix" wx:if="{{item.leixing=='img'}}"></image>
+  <image src='/images/delet.png' class='delet-icon' data-index='{{index}}' catchtap='ondelet' wx:if="{{content[index]!=''}}"></image>
+</view>
+<view class='add'>
+  <image src='/images/add_06.png' bindtap='addtxt'></image>
+  <image src='/images/add_03.png' bindtap='addimg'></image>
+</view>
+<view class='save-btn' bindtap='onsave'>上传</view>

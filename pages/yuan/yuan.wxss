@@ -1,0 +1,78 @@
+/* pages/yuan/yuan.wxss */
+
+page {
+  background-color: #f1f1f1;
+  padding-bottom: 150rpx;
+}
+
+.travel-list .item {
+  background-color: #fff;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  position: relative;
+}
+
+.travel-list .item .hd .avatar {
+  display: inline-block;
+  width: 50rpx;
+  height: 50rpx;
+  margin-bottom: -15rpx;
+  margin-right: 10rpx;
+}
+
+.travel-list .item .hd {
+  font-size: 20rpx;
+  color: #939393;
+}
+
+.travel-list .item .bd {
+  font-size: 20rpx;
+  color: #666;
+  line-height: 32rpx;
+}
+
+.travel-list .item .bd .titt {
+  width: 490rpx;
+  font-size: 28rpx;
+  color: #333;
+  margin-top: 30rpx;
+  margin-bottom: 10rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.travel-list .item .bd .sub-titt {
+  width: 490rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.travel-list .item .suo {
+  display: block;
+  width: 193rpx;
+  height: 162rpx;
+  position: absolute;
+  right: 20rpx;
+  bottom: 30rpx;
+  border-radius: 10rpx;
+}
+
+.fly-btn {
+  width: 690rpx;
+  height: 90rpx;
+  text-align: center;
+  line-height: 90rpx;
+  background-color: #5677fc;
+  color: #fff;
+  font-size: 34rpx;
+  border-radius: 90rpx;
+  position: fixed;
+  left: 50%;
+  margin-left: -345rpx;
+  bottom: 30rpx;
+  z-index: 100;
+}

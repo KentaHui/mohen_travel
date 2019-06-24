@@ -1,0 +1,56 @@
+<view class='k-bai' style='margin-top:0'>
+  <view class='k-input'>
+    <view class='k-label'>名字</view>
+    <input data-name="linkman" type='text' name="linkman" placeholder="请输入名字"></input>
+  </view>
+  <view class='k-input'>
+    <view class='k-label'>性别</view>
+    <radio-group class="radio-group" bindchange="radioChange" style="padding-left:150rpx;">
+      <label class="radio" wx:for="{{items}}" style='margin-right:20rpx;'>
+        <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+      </label>
+    </radio-group>
+  </view>
+  <view class='k-input'>
+    <view class='k-label'>区域</view>
+    <input data-name="linkman" type='text' name="linkman" placeholder="请输入区域"></input>
+  </view>
+  <view class='k-input'>
+    <view class='k-label'>身份证号</view>
+    <input data-name="linkman" type='text' name="linkman" placeholder="请输入身份证号"></input>
+  </view>
+  <view class="page__bd">
+    <view class="weui-cells" style='margin-top:0rpx;'>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <view class="weui-uploader">
+            <view class="weui-uploader__hd">
+              <view class="weui-uploader__title" style='font-size:28rpx;'>证件照片上传</view>
+              <view class="weui-uploader__info" style='font-size:28rpx;'>{{images.length}}/2</view>
+            </view>
+            <view class="weui-uploader__bd">
+              <view class="weui-uploader__files" id="uploaderFiles">
+                <block wx:for="{{images}}" wx:key="*this">
+                  <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                    <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                  </view>
+                </block>
+              </view>
+              <view class="weui-uploader__input-box">
+                <view class="weui-uploader__input" bindtap="chooseImage"></view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='rz' bindtap='onrz'>
+  <image src='/images/check.png' wx:if='{{!agree}}'></image>
+  <image src='/images/checked.png' wx:if='{{agree}}'></image>
+  我已经阅读，同意条款
+</view>
+
+<view class='k-btn launch'>认证</view>
+<view class='k-btn cancel'>取消</view>

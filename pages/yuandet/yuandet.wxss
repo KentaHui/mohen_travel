@@ -1,0 +1,122 @@
+/* pages/yuandet/yuandet.wxss */
+
+.top {
+  width: 750rpx;
+  height: 284rpx;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.top .hui {
+  width: 750rpx;
+  height: 284rpx;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.anchor {
+  width: 392rpx;
+  height: 82rpx;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  left: 30rpx;
+  top: 30rpx;
+  border-radius: 82rpx;
+}
+
+.avatar {
+  display: block;
+  width: 65rpx;
+  height: 65rpx;
+  border-radius: 65rpx;
+  position: absolute;
+  left: 8rpx;
+  top: 6rpx;
+  border: 2rpx solid #fff;
+  overflow: hidden;
+}
+
+.follow {
+  display: block;
+  width: 102rpx;
+  height: 46rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 18rpx;
+}
+
+.nickname {
+  color: #fff;
+  font-size: 28rpx;
+  position: absolute;
+  left: 90rpx;
+  top: 10rpx;
+}
+
+.online {
+  color: #fff;
+  font-size: 20rpx;
+  position: absolute;
+  left: 90rpx;
+  top: 45rpx;
+  opacity: 0.5;
+}
+
+.hd-titt {
+  color: #fff;
+  font-size: 30rpx;
+  position: absolute;
+  left: 50%;
+  margin-left: -240rpx;
+  top: 125rpx;
+  text-align: center;
+  width: 480rpx;
+  line-height: 40rpx;
+}
+
+.apply {
+  color: #5677fc;
+  font-size: 28rpx;
+  width: 260rpx;
+  height: 70rpx;
+  position: absolute;
+  left: 50%;
+  margin-left: -130rpx;
+  bottom: -25rpx;
+  text-align: center;
+  line-height: 70rpx;
+  background-color: #fff;
+  box-shadow: 0 0 30rpx rgba(0, 0, 0, 0.4);
+  border-radius: 70rpx;
+}
+.applyed{background-color: #5677fc;color: #fff;}
+
+.info {
+  font-size: 24rpx;
+  color: #656565;
+  width: 690rpx;
+  margin: 0 auto;
+  margin-top: 40rpx;
+}
+
+.info .titt {
+  font-size: 28rpx;
+  padding-bottom: 10rpx;
+}
+
+.info .titt image {
+  display: inline-block;
+  width: 35rpx;
+  height: 27rpx;
+  margin-right: 4rpx;
+  margin-bottom: -1rpx;
+}
+.info1 .titt {
+  color: #5677fc
+}
+.info2 .titt {
+  color: #19c1e5
+}
+.info .zw{line-height: 45rpx;}

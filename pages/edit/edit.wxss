@@ -1,0 +1,131 @@
+/* pages/edit/edit.wxss */
+
+page {
+  background-color: #f1f1f1;
+  font-size: 28rpx;
+  padding-bottom: 150rpx;
+}
+
+.k-bai {
+  background-color: #fff;
+  padding: 30rpx;
+  color: #666;
+}
+
+.txt {
+  padding: 30rpx;
+  border: 1rpx solid #eee;
+  margin-top: 20rpx;
+  position: relative;
+}
+
+.delet-icon {
+  display: block;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50rpx;
+  position: absolute;
+  right: -20rpx;
+  top: -20rpx;
+  z-index: 10;
+}
+
+.ceng {
+  width: 750rpx;
+  height: 1334rpx;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 50;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.edit-txt {
+  width: 660rpx;
+  background-color: #fff;
+  padding: 30rpx;
+  margin: 0 auto;
+  position: fixed;
+  left: 50%;
+  margin-left: -360rpx;
+  top: 220rpx;
+  z-index: 60;
+}
+
+.edit-txt .save-btn {
+  display: block;
+  width: 450rpx;
+  height: 80rpx;
+  border-radius: 80rpx;
+  background-color: #5677fc;
+  color: #fff;
+  text-align: center;
+  line-height: 80rpx;
+  position: absolute;
+  left: 50%;
+  margin-left: -225rpx;
+  bottom: -40rpx;
+  box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.2);
+}
+
+.edit-txt textarea {
+  width: 660rpx;
+  height: 500rpx;
+}
+
+.add {
+  position: relative;
+  padding: 20rpx 0;
+  width: 200rpx;
+  margin: 0 auto;
+  height: 70rpx;
+  background-color: #fff;
+  border-radius: 0 0 20rpx 20rpx;
+  box-shadow: 0 7rpx 5rpx rgba(0, 0, 0, 0.1);
+}
+
+.add image {
+  display: inline-block;
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.add image:first-child {
+  margin-right: 20rpx;
+  margin-left: 20rpx;
+}
+
+.content {
+  margin-top: 30rpx;
+  position: relative;
+}
+
+.content .delet-icon {
+  right: 12rpx;
+  top: 25rpx;
+}
+
+.content .image {
+  display: block;
+  padding: 30rpx;
+  border: 1rpx solid #eee;
+  margin-top: 20rpx;
+  position: relative;
+  width: 630rpx;
+}
+
+.save-btn {
+  width: 690rpx;
+  height: 90rpx;
+  text-align: center;
+  line-height: 90rpx;
+  background-color: #5677fc;
+  color: #fff;
+  font-size: 34rpx;
+  border-radius: 90rpx;
+  position: fixed;
+  left: 50%;
+  margin-left: -345rpx;
+  bottom: 30rpx;
+  z-index: 100;
+}

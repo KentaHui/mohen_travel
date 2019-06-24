@@ -1,0 +1,27 @@
+<view class="tab">
+  <view class='item {{index==tabindex?"cur":""}}' wx:for="{{tab}}" wx:key="" data-index='{{index}}' bindtap='ontab'>
+    {{item.titt}}
+  </view>
+</view>
+<view class='list' hidden='{{tabindex!=0}}'>
+  <view class='item' wx:for="{{apply}}" wx:key="" data-index='{{index}}' bindtap='onapply'>
+    <view class='titt'>
+      <text>{{item.name}}</text>
+      申请加入你的 #{{item.tips}}#
+    </view>
+    <view class='time'>{{item.time}}</view>
+    <view class='badge {{item.done?"cur":""}}'>{{item.done?"已处理":"未处理"}}</view>
+    <image src='/images/pic_28.png' class='arrow'></image>
+  </view>
+</view>
+<view class='list' hidden='{{tabindex!=1}}'>
+  <view class='item' wx:for="{{system}}" wx:key="" data-index='{{index}}' bindtap='onlist'>
+    <view class='titt'>
+      <text>{{item.name}}</text>
+    </view>
+    <view class='time'>{{item.time}}</view>
+    <view class='badge {{item.done?"cur":""}}'>{{item.done?"已读":"未读"}}</view>
+    <image src='/images/pic_28.png' class='arrow'></image>
+  </view>
+</view>
+

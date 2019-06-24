@@ -1,0 +1,83 @@
+page {
+  background-color: #f1f1f1;
+  padding-bottom: 150rpx;
+}
+
+.fly-btn {
+  width: 690rpx;
+  height: 90rpx;
+  text-align: center;
+  line-height: 90rpx;
+  background-color: #5677fc;
+  color: #fff;
+  font-size: 34rpx;
+  border-radius: 90rpx;
+  position: fixed;
+  left: 50%;
+  margin-left: -345rpx;
+  bottom: 30rpx;
+  z-index: 100;
+}
+
+.ban-list .item {
+  position: relative;
+  width: 690rpx;
+  margin: 0 auto;
+  margin-top: 60rpx;
+  background-color: #fff;
+  border-radius: 8rpx;
+  height: 180rpx;
+}
+
+.ban-list .item .avatar {
+  display: block;
+  width: 109rpx;
+  height: 109rpx;
+  border-radius: 109rpx;
+  border: 5rpx solid #fff;
+  position: absolute;
+  left: 36rpx;
+  top: -36rpx;
+}
+
+.ban-list .item .name {
+  position: absolute;
+  left: 170rpx;
+  font-size: 28rpx;
+  top: 30rpx;
+}
+
+.ban-list .item .name .sex {
+  display: inline-block;
+  width: 28rpx;
+  height: 28rpx;
+  margin-bottom: -3rpx;
+}
+
+.ban-list .item .address {
+  position: absolute;
+  right: 30rpx;
+  font-size: 28rpx;
+  top: 30rpx;
+  color: #8d8d8d
+}
+
+.ban-list .item .address .map {
+  display: inline-block;
+  width: 28rpx;
+  height: 28rpx;
+  margin-bottom: -3rpx;
+}
+
+.ban-list .item .info {
+  position: absolute;
+  left: 0rpx;
+  font-size: 28rpx;
+  top: 60rpx;
+  padding: 30rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  height: 50rpx;color: #8d8d8d
+}

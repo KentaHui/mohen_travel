@@ -1,0 +1,23 @@
+/* pages/messagedetail/messagedetail.wxss */
+
+.box {
+  padding: 30rpx;
+  font-size: 28rpx;
+}
+
+.titt {
+  font-size: 32rpx;
+  color: #333;
+}
+
+.time {
+  font-size: 26rpx;
+  color: #999;
+  padding: 10rpx 0;
+}
+
+.content {
+  font-size: 28rpx;
+  color: #666;
+  padding-top: 10rpx;
+}

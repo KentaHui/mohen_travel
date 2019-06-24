@@ -1,0 +1,66 @@
+<view class="swiper-container">
+  <swiper class='banner' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" current="{{swiperCurrent}}" bindchange="swiperChange">
+    <block wx:for="{{imgUrls}}" wx:key="">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='wanbox'>
+    <image class='wan' src='http://wechatpx.oss-cn-beijing.aliyuncs.com/qixing/ceng.png'></image>
+  </view>
+  <view class="dots">
+    <block wx:for="{{imgUrls}}" wx:key="unique">
+      <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>
+    </block>
+  </view>
+</view>
+<view class='four-menu'>
+  <view class='item'>
+    <view class='txt1'>
+      <text>吃</text>无不尽</view>
+    <view class='txt2'>一起领略食味饕餮</view>
+  </view>
+  <view class='item'>
+    <view class='txt1'>
+      <text>玩</text>天玩地</view>
+    <view class='txt2'>激情与自由之旅</view>
+  </view>
+  <view class='item'>
+    <view class='txt1'>
+      <text>景</text>点情报</view>
+    <view class='txt2'>你需要的都在这里</view>
+  </view>
+  <view class='item'>
+    <view class='txt1'>
+      <text>攻</text>略随行</view>
+    <view class='txt2'>爱玩、会玩</view>
+  </view>
+</view>
+<view class='new-hot'>
+  <text>最新热门</text>
+</view>
+<view class='travel-list'>
+  <view class='item' wx:for="{{list}}" wx:key="" bindtap='toarticle'>
+    <view class='hd'>
+      <image src='{{item.avatar}}' class='avatar'></image> {{item.userid}} 发布了#{{item.tips}}# · {{item.time}}
+    </view>
+    <view class='bd'>
+      <view class='titt'>{{item.titt}}</view>
+      <view class='sub-titt'>{{item.subtitt}}</view>
+    </view>
+    <view class='tubox'>
+      <view class='img' wx:for="{{item.img}}" wx:key="" wx:for-item="img">
+        <image src='{{img}}' bindtap="imgYu" data-list="{{item.img}}" data-src="{{img}}"></image>
+      </view>
+    </view>
+    <view class='ft'>
+      <view class='likes'>
+        <image src='http://wechatpx.oss-cn-beijing.aliyuncs.com/qixing/icon_03.jpg'></image>{{item.likes}}
+      </view>
+      <view class='comments'>
+        <image src='http://wechatpx.oss-cn-beijing.aliyuncs.com/qixing/icon_05.jpg'></image>{{item.comments}}
+      </view>
+    </view>
+  </view>
+</view>
