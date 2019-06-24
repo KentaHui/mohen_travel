@@ -1,3 +1,4 @@
+<!-- 个人认证 -->
 <view class='k-bai' style='margin-top:0'>
   <view class='k-input'>
     <view class='k-label'>名字</view>

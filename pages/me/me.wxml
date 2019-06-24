@@ -1,4 +1,5 @@
 <!--pages/me/me.wxml-->
+<!-- 我的 -->
 <view class="top" style='background-image: url(http://blog-kenta.oss-cn-hangzhou.aliyuncs.com/poster/back.jpg)'>
   <image src='/images/sl_03.png' class='tx'></image>
   <view class='name'>

@@ -1,3 +1,4 @@
+<!-- 创建伴游 -->
 <view class='k-bai' style='margin-top:0'>
   <view class='k-input'>
     <view class='k-label'>标题</view>

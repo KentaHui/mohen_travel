@@ -1,3 +1,4 @@
+<!-- 消息通知 -->
 <view class="tab">
   <view class='item {{index==tabindex?"cur":""}}' wx:for="{{tab}}" wx:key="" data-index='{{index}}' bindtap='ontab'>
     {{item.titt}}

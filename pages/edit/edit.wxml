@@ -1,3 +1,4 @@
+<!-- 创建文章 -->
 <view class='ceng' hidden='{{!showceng}}' catchtouchmove='true'></view>
 <!-- editTxt-titt -->
 <view class='edit-txt' hidden='{{!showedittitt}}' catchtouchmove='true'>

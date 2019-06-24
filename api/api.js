@@ -1,4 +1,11 @@
 const api ="https://qx.mohennet.xyz";
-const Pushlist = api +" /publish_list/?category_type=";
-const Login = api +"/wx_login/";
-const Registered = api + "/registered/"
+var  Pushlist = api +"/publish_list/?category_type=";
+var  Login = api +"/wx_login/";
+var  Registered = api + "/registered/"
+
+
+module.exports = {
+  Pushlist: Pushlist,
+  Registered: Registered,
+  Login: Login
+}

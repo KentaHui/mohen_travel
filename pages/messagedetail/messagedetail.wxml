@@ -1,3 +1,4 @@
+<!-- 系统通知 -->
 <view class="box">
   <view class='titt'>{{titt}}</view>
   <view class='time'>{{time}}</view>

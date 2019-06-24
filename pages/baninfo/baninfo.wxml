@@ -1,3 +1,4 @@
+<!-- 创建伴游 -->
 <view class='k-bai'>
   <view class='k-input'>
     <view class='k-label'>姓名</view>

@@ -6,6 +6,7 @@ const app = getApp()
 
 Page({
   data: {
+    showlogin:true,
     indicatorDots: false,
     autoplay: true,
     interval: 5000,
@@ -52,8 +53,31 @@ Page({
     var that =this
     console.log('获取mohennet.xyz数据')
     that.geturl();
+    const jwt=wx.getStorageSync("jwt")
+    if(!jwt){
+      that.setData({
+        showlogin: true
+      })
+    }else{
+      that.setData({
+        showlogin: false
+      })
+    }
   },
-  
+  toplaydetail(e){
+    var that = this ;
+    console.log(e.currentTarget.dataset.index)
+    var i = e.currentTarget.dataset.index
+    wx.navigateTo({
+      url: '/pages/playdetail/playdetail?index='+i,
+    })
+  },
+  bindGetUserInfo(e) {
+    app.login(e)
+    this.setData({
+      showlogin:false
+    })
+  },
   swiperChange: function(e) {
     this.setData({
       swiperCurrent: e.detail.current

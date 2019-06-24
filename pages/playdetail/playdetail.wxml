@@ -1,0 +1,32 @@
+<!--pages/playdetail/playdetail.wxml-->
+<view class="section">
+  <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+    <view class="picker">
+      [{{region[0]}}]--[{{region[1]}} ]---[{{region[2]}}]
+    </view>
+  </picker>
+</view>
+<view class='travel-list'>
+  <view class='item' wx:for="{{list}}" wx:key="" bindtap='toarticle'>
+    <view class='hd'>
+      <image src='{{item.avatar}}' class='avatar'></image> {{item.userid}} 发布了#{{item.tips}}# · {{item.time}}
+    </view>
+    <view class='bd'>
+      <view class='titt'>{{item.titt}}</view>
+      <view class='sub-titt'>{{item.subtitt}}</view>
+    </view>
+    <view class='tubox'>
+      <view class='img' wx:for="{{item.img}}" wx:key="" wx:for-item="img">
+        <image src='{{img}}' bindtap="imgYu" data-list="{{item.img}}" data-src="{{img}}"></image>
+      </view>
+    </view>
+    <view class='ft'>
+      <view class='likes'>
+        <image src='http://wechatpx.oss-cn-beijing.aliyuncs.com/qixing/icon_03.jpg'></image>{{item.likes}}
+      </view>
+      <view class='comments'>
+        <image src='http://wechatpx.oss-cn-beijing.aliyuncs.com/qixing/icon_05.jpg'></image>{{item.comments}}
+      </view>
+    </view>
+  </view>
+</view>

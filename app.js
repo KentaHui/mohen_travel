@@ -1,7 +1,7 @@
 //app.js
 var api = require("./api/api.js"); //引入apijs
 App({
-  onLaunch: function () {
+  onLaunch: function() {
     console.log("奇行启动")
     //调用API从本地缓存中获取数据
     var jwt = wx.getStorageSync('jwt');
@@ -15,8 +15,8 @@ App({
       this.globalData.jwt = jwt
     }
   },
-  getlocal(){
-    var  that = this ;
+  getlocal() {
+    var that = this;
     wx.authorize({
       scope: 'scope.userLocation',
       success() {
@@ -25,19 +25,19 @@ App({
           type: 'wgs84',
           success(res) {
             //获取成功进行位置比对
-            console.log(res)
+            // console.log(res)
           }
         })
       }
     })
   },
-  login: function (e) {
+  login: function(e) {
     var userinfo = e
     // 登录部分代码
     var that = this;
     wx.login({
       // 调用 login 获取 code
-      success: function (res) {
+      success: function(res) {
         var code = res.code;
         try {
           that.globalData.userInfo = userinfo.detail.userInfo;
@@ -57,7 +57,7 @@ App({
             code: code,
           },
           method: "POST",
-          success: function (res) {
+          success: function(res) {
             if (res.statusCode === 200) {
               // 得到 jwt 后存储到 storage，
               wx.showToast({
@@ -74,6 +74,7 @@ App({
               that.globalData.account_id = res.data.sub
             } else if (res.statusCode === 400) {
               // 如果没有注册调用注册接口
+              console.log('login失败，去注册')
               that.register(userinfo);
             } else {
               // 提示错误信息
@@ -84,23 +85,27 @@ App({
               });
             }
           },
-          fail: function (res) { }
+          fail: function(res) {}
         })
       }
     })
   },
-  register: function (e) {
+  register: function(e) {
     // 注册代码
+    console.log("register")
     var that = this;
     var userinfo = e
+    console.log("e", e)
     wx.login({ // 调用登录接口获取 code
-      success: function (res) {
+      success: function(res) {
         var code = res.code;
+        console.log(res)
         try {
           that.globalData.userInfo = userinfo.detail.userInfo;
           var encryptedData = userinfo.detail.encryptedData || 'encry';
           var iv = userinfo.detail.iv || 'iv';
         } catch (e) {
+          console.log("失败")
           return false
         }
         wx.request({ // 请求注册用户接口
@@ -114,7 +119,8 @@ App({
             code: code,
           },
           method: "POST",
-          success: function (res) {
+          success: function(res) {
+            console.log(res)
             if (res.statusCode == 201) {
               that.login(userinfo);
             }
@@ -122,7 +128,9 @@ App({
               that.register(userinfo);
             }
           },
-          fail: function (res) { }
+          fail: function(res) {
+            console.log(res, "注册失败")
+          }
         })
       }
     })

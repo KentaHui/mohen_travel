@@ -1,3 +1,4 @@
+<!-- 文章详情 -->
 <view class="box">
   <view class='titt'>{{titt}}</view>
   <view class='author'>

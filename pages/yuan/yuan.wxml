@@ -1,3 +1,4 @@
+<!-- 远行招募 -->
 <view class='travel-list'>
   <view class='item' wx:for="{{list}}" wx:key="" bindtap='toyuandet'>
     <view class='hd'>
