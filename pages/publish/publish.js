@@ -36,6 +36,7 @@ Page({
         comments: 12
       },
     ],
+    addindex: null,
     tabindex: 0,
     tab: [
       {
@@ -51,6 +52,18 @@ Page({
         titt: '已拒绝',
       }
     ]
+  },
+  add(e) {
+    var that = this;
+    if (that.data.addindex == e.currentTarget.dataset.index) {
+      that.setData({
+        addindex: -2
+      })
+    } else {
+      that.setData({
+        addindex: e.currentTarget.dataset.index
+      })
+    }
   },
   ontab: function (e) {
     this.setData({
@@ -70,6 +83,14 @@ Page({
   toedit: function () {
     wx.navigateTo({
       url: '../../pages/edit/edit'
+    })
+  },
+  addtype(e){
+    console.log(e.currentTarget.dataset.index)
+    var that = this 
+    var type = e.currentTarget.dataset.index
+    wx.navigateTo({
+      url: '../../pages/edit/edit?type='+type
     })
   },
   /**

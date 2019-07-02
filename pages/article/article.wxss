@@ -19,9 +19,14 @@
 .content {
   font-size: 28rpx;
   color: #666;
-  padding-top: 30rpx;
 }
-
+.content>view{
+  margin:35rpx auto;
+  line-height: 46rpx;
+}
+.content>image{
+  width:100%;
+}
 .avatar {
   display: inline-block;
   width: 50rpx;

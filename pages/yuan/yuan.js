@@ -1,4 +1,7 @@
 // pages/yuan/yuan.js
+var api = require("../../api/api.js")
+const app = getApp()
+
 Page({
 
   /**
@@ -37,6 +40,16 @@ Page({
     },
     ]
   },
+  getlist(){
+    var  that = this;
+    wx.request({
+      url: api.Items,
+      method:"get",
+      success(res){
+        console.log(res.data)
+      }
+    }) 
+    },
   topost: function () {
     wx.navigateTo({
       url: '../../pages/postyuan/postyuan'
@@ -51,7 +64,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var  that = this ;
+    that.getlist()
   },
 
   /**

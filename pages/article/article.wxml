@@ -1,8 +1,11 @@
 <!-- 文章详情 -->
 <view class="box">
-  <view class='titt'>{{titt}}</view>
+  <view class='titt'>{{details.title}}</view>
   <view class='author'>
-    <image src='{{avatar}}' class='avatar'></image> {{userid}} 发布了#{{tips}}# · {{time}}
+    <image src='{{details.user.avatar}}' class='avatar'></image> {{details.user.name}} 发布了#{{details.city}}# 
   </view>
-  <view class='content'>{{content}}</view>
+  <view class='content' wx:for="{{details.content}}" wx:key="">
+    <view>{{item.detail}}</view>
+    <image src='{{item.image}}'wx:if="{{item.image}}" mode='widthFix'></image>
+  </view>
 </view>

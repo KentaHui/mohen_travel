@@ -1,24 +1,28 @@
 // pages/messagedetail/messagedetail.js
+//获取应用实例
+// 引入api.js
+var api = require("../../api/api.js")
+const app = getApp()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    titt: '提示标题提示标题提示标题提示标题',
-    time: '2081-10-22',
-    content: '那天我刚下楼梯，准备打开大门要出去，突然被一个陌生的声音叫住:“小李呀，麻烦你把电灯开一下。”那天我刚下楼梯，准备打开大门要出去，突然被一个陌生的声音叫住:“小李呀，麻烦你把电灯开一下。”那天我刚下楼梯，准备打开大门要出去，突然被一个陌生的声音叫住:“小李呀，麻烦你把电灯开一下。”那天我刚下楼梯，准备打开大门要出去，突然被一个陌生的声音叫住:“小李呀，麻烦你把电灯开一下。”那天我刚下楼梯，准备打开大门要出去，突然被一个陌生的声音叫住:“小李呀，麻烦你把电灯开一下。”那天我刚下楼梯，准备打开大门要出去，突然被一个陌生的声音叫住:“小李呀，麻烦你把电灯开一下。”那天我刚下楼梯，准备打开大门要出去，突然被一个陌生的声音叫住:“小李呀，麻烦你把电灯开一下。”那天我刚下楼梯，准备打开大门要出去，突然被一个陌生的声音叫住:“小李呀，麻烦你把电灯开一下。”那天我刚下楼梯，准备打开大门要出去，突然被一个陌生的声音叫住:“小李呀，麻烦你把电灯开一下。”那天我刚下楼梯，准备打开大门要出去，突然被一个陌生的声音叫住:“小李呀，麻烦你把电灯开一下。”那天我刚下楼梯，准备打开大门要出去，突然被一个陌生的声音叫住:“小李呀，麻烦你把电灯开一下。”那天我刚下楼梯，准备打开大门要出去，突然被一个陌生的声音叫住:“小李呀，麻烦你把电灯开一下。”那天我刚下楼梯，准备打开大门要出去，突然被一个陌生的声音叫住:“小李呀，麻烦你把电灯开一下。”',
-    userid: 'Crasty',
-    tips: '旅行攻略',
-    time: '2分钟前',
-    avatar: 'http://wechatpx.oss-cn-beijing.aliyuncs.com/qixing/pic_16.jpg',
+    details:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+      console.log(options)
+      var  that = this ;
+      that.setData({
+        id:options.id
+      })
+    that.getdetail()
   },
 
   /**
@@ -34,7 +38,22 @@ Page({
   onShow: function () {
 
   },
-
+  getdetail(){
+    var  that = this ;
+    wx.request({
+      url: api.Detail + that.data.id,
+      method:"get",
+      header: {
+        "Authorization": "JWT" + app.globalData.jwt
+      },
+      success(res){
+        console.log(res.data)
+        that.setData({
+          details:res.data
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */
@@ -53,14 +72,15 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    console.log("下拉")
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    console.log("上啦")
+    wx.showNavigationBarLoading()
   },
 
   /**

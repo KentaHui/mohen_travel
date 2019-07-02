@@ -1,28 +1,36 @@
 <!-- 创建伴游 -->
 <view class='k-bai'>
+  <view class='img'>
+    <image src='/images/pic_16.jpg'></image>
+  </view>
   <view class='k-input'>
     <view class='k-label'>姓名</view>
     <input type='text' placeholder="请输入姓名" value='{{name}}'></input>
   </view>
   <view class='k-input'>
     <view class='k-label'>性别</view>
-    <input type='text' placeholder="请输入性别" value='{{sex}}'></input>
+    <radio-group class="radio-group" bindchange="radioChange">
+      <label class="radio" wx:for="{{sex}}">
+        <radio value="{{item.gender}}" checked="{{item.checked}}" color="#72b8ff" />{{item.gender}}
+      </label>
+    </radio-group>
   </view>
   <view class='k-input'>
     <view class='k-label'>区域</view>
-    <input type='text' placeholder="请输入区域" value='{{area}}'></input>
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}" style='left:180rpx;' custom-item="{{customItem}}">
+      <text wx:if="{{region[0]!='全部'}}">{{region[0]}}-</text>
+      <text wx:if="{{region[1]!='全部'}}">{{region[1]}}</text>
+      <text wx:if="{{region[2]!='全部'}}">-{{region[2]}}</text>
+    </picker>
   </view>
   <view class='k-input'>
     <view class='k-label'>可预约时间</view>
-    <input type='text' placeholder="请输入可预约时间区间" style='left:190rpx;' value='{{time}}'></input>
-  </view>
-  <view class='k-area'>
-    <text class='k-label' space="ensp">个人简介</text>
-    <textarea placeholder='请输入个人简介' value='{{intro}}'></textarea>
-  </view>
-  <view class='k-area'>
-    <text class='k-label' space="ensp">个人展示</text>
-    <textarea placeholder='请输入个人展示' value='{{show}}'></textarea>
+    <picker mode="date" value="{{startdate}}" start="2019-07-01" end="2030-07-01" style='left:180rpx;' bindchange="startdate">
+      {{startdate}} ---
+    </picker>
+    <picker mode="date" value="{{enddate}}" start="2019-08-01" end="2030-08-01" style='left:390rpx;' bindchange="enddate">
+      {{enddate}}
+    </picker>
   </view>
   <view class='k-input'>
     <view class='k-label'>微信</view>
@@ -33,4 +41,38 @@
     <input type='text' placeholder="请输入电话" value='{{tel}}'></input>
   </view>
 </view>
+<!-- 个人简介  -->
+<view class="container">
+  <view class="title">个人简介</view>
+  <view class="add">
+    <view class="addcont" wx:if='{{addindex=="-1"}}'>
+      <image src='../../images/add_06.png' bindtap='addtext' data-index='{{index}}'></image>
+      <image src='../../images/add_03.png' bindtap='addimg' data-index='{{index}}'></image>
+    </view>
+    <view class="addimg" bindtap='add' data-index='-1'>
+      <image src='../../images/add.png'></image>
+    </view>
+  </view>
+  <view class='content' wx:for="{{content}}" wx:key="index">
+    <view class='cont'>
+      <text class="delet" bindtap='delet' data-index="{{index}}">x</text>
+      <image src='{{item.path}}' mode='widthFix' bindtap='chooseimg' data-index='{{index}}'></image>
+      <view>
+        <textarea placeholder="请输入内容。。。" placeholder-style="color:rgba(0,0,0,0.5);font-size:24rpx;" maxlength="-1" auto-height="ture" value='{{item.cont}}' bindinput="reditedcontent" data-index='{{index}}'></textarea>
+      </view>
+      <text class="toshang" wx:if="{{index!=0}}" bindtap='toshang' data-index="{{index}}">︿</text>
+      <text class="tobottom" wx:if="{{index!=content.length-1}}" bindtap='tobottom' data-index='{{index}}'>﹀</text>
+    </view>
+    <view class="add">
+      <view class="addcont" wx:if='{{addindex==index}}'>
+        <image src='../../images/add_06.png' bindtap='addtext' data-index='{{index}}'></image>
+        <image src='../../images/add_03.png' bindtap='addimg' data-index='{{index}}'></image>
+      </view>
+      <view class="addimg" bindtap='add' data-index='{{index}}'>
+        <image src='../../images/add.png'></image>
+      </view>
+    </view>
+  </view>
+</view>
+
 <view class='save-btn'>保存</view>

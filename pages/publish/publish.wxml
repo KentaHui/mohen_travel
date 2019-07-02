@@ -16,4 +16,27 @@
     <image src='/images/yuan_03.png' class='suo'></image>
   </view>
 </view>
-<view class='edit' bindtap='toedit'>创建文章</view>
+<!-- <view class='edit' bindtap='toedit'>创建文章</view> -->
+<view class="edit">
+  <view class="addcont" wx:if='{{addindex=="-1"}}'>
+    <view>
+      <image src='/images/shiwu.png' bindtap='addtype' data-index='1'></image>
+      <view>名吃</view>
+    </view>
+    <view>
+      <image src='/images/add_06.png' bindtap='addtype' data-index='2'></image>
+      <view>玩法</view>
+    </view>
+    <view>
+      <image src='/images/jingdian.png' bindtap='addtype' data-index='3'></image>
+      <view>景点</view>
+    </view>
+    <view>
+      <image src='/images/gonglve.png' bindtap='addtype' data-index='4'></image>
+      <view>攻略</view>
+    </view>
+  </view>
+  <view class="img" bindtap='add' data-index='-1'>
+    <image src='/images/zhuanxie.png'></image>
+  </view>
+</view>

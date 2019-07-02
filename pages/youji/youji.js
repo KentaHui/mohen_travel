@@ -14,7 +14,6 @@ Page({
     title: null,
     addindex: null,
     customItem: "全部",
-    type:null,
     region: ['省', '市', '区/县'],
   },
   reditedtitle(e) {
@@ -33,65 +32,26 @@ Page({
       content: that.data.content
     })
   },
-  // 完成
-  ok() {
-    var that = this;
-    wx.showActionSheet({
-      itemList: ["保存", "发布"],
-      success: function(res) {
-        if (res.tapIndex == 0) {
-          console.log("保存")
-        }
-        if (res.tapIndex == 1) {
-          console.log("发布")
-          console.log(app.globalData.jwt)
-          wx.request({
-            url: api.Publish,
-            method:"post",
-            dataType:"json",
-            header: {
-              "Authorization": "JWT " + app.globalData.jwt
-            },
-            data:{
-              "category_type": that.data.type,
-              "province": that.data.region[0],
-              "city": that.data.region[1],
-              "district": that.data.region[2],
-              "title":that.data.title,
-              "click_num": 0,
-              "fav_num":0
-            },
-            success(res){
-              console.log(res)
-              var id= res.data.id
-              var pics = that.data.content;
-              app.uploadimg({
-                url: api.Content,//这里是你图片上传的接口
-                path: pics,//这里是选取的图片的地址数组
-                id:id
-              });
-            },
-            fail(){
-              console.log("失败")
-            }
-          })
-        }
-      }
-    })
+  ok: function () {//这里触发图片上传的方法
+    var pics = this.data.content;
+    app.uploadimg({
+      url: api.Content,//这里是你图片上传的接口
+      path: pics,//这里是选取的图片的地址数组
+      id:id
+    });
   },
-  // 发布
+
   release() {
     var that = this;
     wx: wx.request({
       url: api.Publish,
       data: {
-        "category_type": that.data.type,
-        "province": that.data.region[0],
-        "city": that.data.region[1],
-        "district": that.data.region[2],
-        "title": that.data.title,
-        "click_num": null,
-        "fav_num": null
+        "content": that.data.content,
+        "category_type": "1",
+        "province": province,
+        "city": city,
+        "district": district,
+        "title": that.data.title
       },
       header: {
         "Authorization": "JWT" + app.globalData.jwt
@@ -158,7 +118,7 @@ Page({
   chooseimg(e) {
     var that = this;
     let index = e.currentTarget.dataset.index
-    if (that.data.content[index].path == "/images/add_01.png") {
+    if (that.data.content[index].path == "") {
       wx.chooseImage({
         success: function(res) {
           that.data.content[index].path = res.tempFilePaths[0]
@@ -182,7 +142,7 @@ Page({
             })
           }
           if (res.tapIndex == 1) {
-            that.data.content[index].path = "/images/add_01.png"
+            that.data.content[index].path = ""
             that.setData({
               content: that.data.content
             })
@@ -235,7 +195,7 @@ Page({
       showadd: false
     })
     var newcont = {
-      path: "/images/add_01.png",
+      path: "",
       cont: ""
     }
     that.data.content.splice(index + 1, 0, newcont)
@@ -251,9 +211,6 @@ Page({
   onLoad: function(options) {
     var that = this;
     console.log(options)
-    that.setData({
-      type:options.type
-    })
   },
 
   /**

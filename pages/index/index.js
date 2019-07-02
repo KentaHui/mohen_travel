@@ -53,6 +53,7 @@ Page({
     var that =this
     console.log('获取mohennet.xyz数据')
     that.geturl();
+    that.getswiper()
     const jwt=wx.getStorageSync("jwt")
     if(!jwt){
       that.setData({
@@ -68,14 +69,44 @@ Page({
     var that = this ;
     console.log(e.currentTarget.dataset.index)
     var i = e.currentTarget.dataset.index
+    if(i==1){
+      var title = "吃无不尽"
+    }else if(i==2){
+      var title = "玩天玩地"
+    }else if(i==3){
+      var title = "景点情报"
+    }else if(i==4){
+      var title = "攻略随行"
+    }
     wx.navigateTo({
-      url: '/pages/playdetail/playdetail?index='+i,
+      url: '/pages/playdetail/playdetail?index='+i+"&title="+title,
     })
   },
   bindGetUserInfo(e) {
     app.login(e)
     this.setData({
       showlogin:false
+    })
+  },
+  banner(e){
+    var  that = this ;
+    var id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: '/pages/article/article?id=' + id
+    })
+  },
+  getswiper(){
+    var that = this ;
+    wx.request({
+      url: api.Banner,
+      method: 'GET',
+      dataType: 'json',
+      success: function(res) {
+        console.log(res,"banner")
+        that.setData({
+          imgUrls:res.data
+        })
+      },
     })
   },
   swiperChange: function(e) {

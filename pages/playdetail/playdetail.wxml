@@ -1,31 +1,32 @@
 <!--pages/playdetail/playdetail.wxml-->
 <view class="section">
-  <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+  <picker mode="region" bindchange="bindRegionChange"  value="{{region}}" custom-item="{{customItem}}">
     <view class="picker">
-      [{{region[0]}}]--[{{region[1]}} ]---[{{region[2]}}]
+    地区：<text wx:if="{{region[0]!='全部'&&region[2]=='全部'}}">{{region[0]}}-</text><text wx:if="{{region[1]!='全部'}}">{{region[1]}}</text><text wx:if="{{region[2]!='全部'}}">-{{region[2]}}</text>
+    <image src='https://image--ccccc.oss-cn-hangzhou.aliyuncs.com/underarrow.png'></image>
     </view>
   </picker>
 </view>
 <view class='travel-list'>
-  <view class='item' wx:for="{{list}}" wx:key="" bindtap='toarticle'>
+  <view class='item' wx:for="{{list}}" wx:key="" bindtap='toarticle' data-id="{{item.id}}">
     <view class='hd'>
-      <image src='{{item.avatar}}' class='avatar'></image> {{item.userid}} 发布了#{{item.tips}}# · {{item.time}}
+      <image src='{{item.user.avatar}}' class='avatar'></image> {{item.user.name}} 发布了#{{item.city}}# 
     </view>
     <view class='bd'>
-      <view class='titt'>{{item.titt}}</view>
-      <view class='sub-titt'>{{item.subtitt}}</view>
+      <view class='titt'>{{item.title}}</view>
+      <view class='sub-titt'>{{item.content[0].detail}}</view>
     </view>
     <view class='tubox'>
-      <view class='img' wx:for="{{item.img}}" wx:key="" wx:for-item="img">
-        <image src='{{img}}' bindtap="imgYu" data-list="{{item.img}}" data-src="{{img}}"></image>
+      <view class='img' wx:for="{{item.content}}" wx:key="" wx:for-item="img" wx:for-index="idx" wx:if="{{idx<=2}}">
+        <image src='{{img.image}}' bindtap="imgYu" data-list="{{item.img}}" data-src="{{img}}"></image>
       </view>
     </view>
     <view class='ft'>
       <view class='likes'>
-        <image src='http://wechatpx.oss-cn-beijing.aliyuncs.com/qixing/icon_03.jpg'></image>{{item.likes}}
+        <image src='http://wechatpx.oss-cn-beijing.aliyuncs.com/qixing/icon_03.jpg'></image>{{item.fav_num}}
       </view>
       <view class='comments'>
-        <image src='http://wechatpx.oss-cn-beijing.aliyuncs.com/qixing/icon_05.jpg'></image>{{item.comments}}
+        <image src='https://image--ccccc.oss-cn-hangzhou.aliyuncs.com/eyes.png'></image> {{item.click_num}}
       </view>
     </view>
   </view>

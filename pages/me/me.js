@@ -1,4 +1,7 @@
 // pages/me/me.js
+var api = require("../../api/api.js")
+const app = getApp()
+
 Page({
 
   /**
@@ -199,10 +202,33 @@ Page({
     }
   },
   /**
+   * 获取用户信息
+   */
+  getuser(){
+    var that = this 
+    wx.request({
+      url: api.Getuser,
+      header:{
+        "Authorization": "JWT " + app.globalData.jwt
+      },
+      method:"POST",
+      data:{
+
+      },
+      dataType:"json",
+      success(res){
+        console.log(res)
+      }
+
+    })
+
+  },
+  /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this ;
+    that.getuser()
   },
 
   /**
