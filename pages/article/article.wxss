@@ -1,8 +1,11 @@
 /* pages/messagedetail/messagedetail.wxss */
-
+page {
+  background-color: #eeeff1;
+}
 .box {
   padding: 30rpx;
   font-size: 28rpx;
+  background:#ffffff;
 }
 
 .titt {
@@ -39,4 +42,77 @@
   font-size: 24rpx;
   color: #939393;
   padding: 15rpx 0
+}
+.author image{
+  border-radius: 50%;
+}
+.ft{
+  position: relative;
+}
+ .ft view {
+  display: inline-block;
+  font-size: 20rpx;
+  color: #939393;
+  margin-right: 30rpx;
+  padding-top: 30rpx;
+}
+
+ .ft view image {
+  display: inline-block;
+  width: 26rpx;
+  height: 21rpx;
+  margin-right: 5rpx;
+  margin-top: -0rpx;
+}
+.ft .tousu{
+  font-size: 20rpx;
+  color:cornflowerblue;
+  position: absolute;
+  top:0rpx;
+  right:-20rpx;
+}
+
+/*评论*/
+.evaluation{
+  background:#ffffff;
+  margin-top:20rpx;
+  font-size: 24rpx;
+  padding-bottom: 50rpx;
+}
+.evaluation .evatitle{
+  margin-left:30rpx;
+  padding-top:30rpx;
+}
+.evaluation .evacont{
+  border-top:1px solid #93939317;
+  width:95%;
+  margin:20rpx auto auto auto;
+}
+.evacont .evadetail{
+  margin:20rpx auto ;
+  position: relative;
+}
+.evadetail .evauser{
+  line-height: 60rpx;
+}
+.evadetail .evauser image{
+  width:60rpx;height:60rpx;
+  border-radius: 50%;
+  float:left;
+}
+.evadetail .evauser>text:nth-child(2){
+  float:left;
+  margin-left:20rpx;
+}
+.evadetail .evauser>text:last-child{
+  float: right;
+}
+.evadetail .evauser>text:last-child::after{
+  display: block;
+  content:"";
+  clear: both;
+}
+.evadetail .evacon{
+  clear:both;
+  margin-left:80rpx;padding-top:20rpx;
 }

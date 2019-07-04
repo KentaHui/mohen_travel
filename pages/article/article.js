@@ -10,21 +10,47 @@ Page({
    * 页面的初始数据
    */
   data: {
-    details:null
+    details: null,
+    click_num: "",
+    fav_num: "",
+    evalist: [
+      { img: "/images/sl_03.png", user: "墨痕", date: "1天前",cont:"就很棒" },
+      { img: "/images/sl_03.png", user: "墨痕", date: "1天前",cont:"就很棒" },
+      { img: "/images/sl_03.png", user: "墨痕", date: "1天前",cont:"就很棒" },
+      { img: "/images/sl_03.png", user: "墨痕", date: "1天前",cont:"就很棒" },
+      { img: "/images/sl_03.png", user: "墨痕", date: "1天前",cont:"就很棒" },
+    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      console.log(options)
-      var  that = this ;
-      that.setData({
-        id:options.id
-      })
+    console.log(options)
+    var that = this;
+    that.setData({
+      id: options.id
+    })
     that.getdetail()
   },
-
+  getdetail() {
+    var that = this;
+    wx.request({
+      url: api.Detail + that.data.id,
+      method: "get",
+      header: {
+        "Authorization": "JWT" + app.globalData.jwt
+      },
+      success(res) {
+        console.log(res.data)
+        that.setData({
+          details: res.data,
+          click_num: res.data.click_num,
+          fav_num: res.data.fav_num
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -38,22 +64,7 @@ Page({
   onShow: function () {
 
   },
-  getdetail(){
-    var  that = this ;
-    wx.request({
-      url: api.Detail + that.data.id,
-      method:"get",
-      header: {
-        "Authorization": "JWT" + app.globalData.jwt
-      },
-      success(res){
-        console.log(res.data)
-        that.setData({
-          details:res.data
-        })
-      }
-    })
-  },
+
   /**
    * 生命周期函数--监听页面隐藏
    */
@@ -80,7 +91,6 @@ Page({
    */
   onReachBottom: function () {
     console.log("上啦")
-    wx.showNavigationBarLoading()
   },
 
   /**

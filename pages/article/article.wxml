@@ -2,10 +2,35 @@
 <view class="box">
   <view class='titt'>{{details.title}}</view>
   <view class='author'>
-    <image src='{{details.user.avatar}}' class='avatar'></image> {{details.user.name}} 发布了#{{details.city}}# 
+    <image src='{{details.user.avatar}}' class='avatar'></image> {{details.user.name}} 发布了#{{details.city}}#
   </view>
   <view class='content' wx:for="{{details.content}}" wx:key="">
     <view>{{item.detail}}</view>
-    <image src='{{item.image}}'wx:if="{{item.image}}" mode='widthFix'></image>
+    <image src='{{item.image}}' wx:if="{{item.image}}" mode='widthFix'></image>
+  </view>
+  <view class='ft'>
+    <view class='likes'>
+      <image src='http://wechatpx.oss-cn-beijing.aliyuncs.com/qixing/icon_03.jpg'></image>{{fav_num}}
+    </view>
+    <view class='comments'>
+      <image src='https://image--ccccc.oss-cn-hangzhou.aliyuncs.com/eyes.png'></image> {{click_num}}
+    </view>
+    <view class="tousu">投诉文章</view>
+  </view>
+</view>
+<!-- 评论 -->
+<view class="evaluation">
+  <view class="evatitle">最新评价</view>
+  <view class='evacont' wx:for="{{evalist}}" wx:key="index" >
+    <view class="evadetail" wx:if="{{index<4}}">
+      <view class='evauser'>
+        <image src="{{item.img}}"></image>
+        <text>{{item.user}}</text>
+        <text>{{item.date}}</text>
+      </view>
+      <view class='evacon'>
+        {{item.cont}}
+      </view>
+    </view>
   </view>
 </view>
